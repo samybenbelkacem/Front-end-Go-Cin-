@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Accueil - Gociné</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styledebase.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="homev2.html">
+               <img src="logo.png" alt="GoCiné" class="logo">  
+           </a>
+        <button type="button" id="signin" data-toggle="modal" data-target="#signInModal"><i class="fa fa-user-circle" aria-hidden="true"></i> Connectez-vous</button>
+        <!-- Fenêtre modale qui s'affiche en cliquant sur Connectez-vous-->
+        <div class="modal fade" id="signInModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fa fa-user-circle" aria-hidden="true"></i> Connectez-vous !</h4>
+                    </div>
+                    <div class="modal-body">...</div>
+
+                    <div class="modal-footer">...</div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <div class="row">
+        <div class="col-sm-4 left-button links">
+            <a href=""><i class="fa fa-plus-square-o" aria-hidden="true"></i>
+  Créez votre séance</a>
+        </div>
+        <div class="col-sm-4 links middle-button">
+            <a href=""> <i class="fa fa-users" aria-hidden="true"></i> Rejoignez une séance</a>
+        </div>
+        <div class="col-sm-4 links right-button">
+            <a href="" class="">
+                         <i class="fa fa-question-circle-o" aria-hidden="true"></i> Comment ça marche ?</a>
+        </div>
+
+    </div>
+
+    <!--Créer une base carousel avec des images et faire une boucle sur avec Jinja, j'ai mis trois images de test pour l'instant-->
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/CarouselOliver.jpg" width="100%" alt="New York">
+                <div class="carousel-caption transparent">
+                    <h3>Votre film</h3>
+                    <p>Sur Go-ciné, vous choisissez le film que vous voulez regarder, quand vous voulez, où vous voulez. </p>
+                    <button class="btn btn-danger">Réservez le film que <b>vous</b> voulez</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/CarouselFunes.jpg" width="100%" alt="Chicago">
+                <div class="carousel-caption transparent">
+                    <h3>Films cultes</h3>
+                    <p>Revoyez Louis de Funès au grand écran ! </p>
+                    <button class="btn btn-danger">Réservez <b>votre</b> film culte</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/CarouselHP.jpg" width="100%" alt="Harry Potter">
+                <div class="carousel-caption">
+                    <div class="transparent">
+                        <h3>Blockbusters</h3>
+                        <p>Harry Potter, Le Seigneur des Anneaux, ...</p>
+                        <button class="btn btn-danger">Réservez <b>votre</b> blockbuster</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- Boutons gauche et droite pour changer d'image -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+    </div>
+    <!-- Fin du carousel-->
+
+
+
+    <div class="container projectioncontainer">
+
+
+
+
+        <div class="row">
+            <h3>Les projections du moment</h3>
+            <!--            J'ai mis à exemple, je t'ai mis en accolade les endroits où injecter les variables. Il faudrait faire une boucle sur les 3 projections les plus populaires du moment sur la page d'accueil (tu dois pouvoir faire un filtre + tri décroissant pour ça ?)-->
+        </div>
+        <div class="row">
+            <!-- encart d'un film -->
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="img/StarWarsMenaceFantome.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">{Titre du film}</h4>
+
+                    <p class="card-text">{Date et heure de projection} <br> {Deadline} <br> {Nom du cinéma} </p>
+                    <!--    Ce bouton doit incrémenter de 1 nb.votes-->
+                    <a href="#" class="btn btn-danger"><i class="fa fa-users" aria-hidden="true"></i>  Rejoindre la séance </a>
+                    <!--    En cliquant sur En savoir plus, la fenêtre modale d'id "ensavoirPlusModal" s'ouvre : elle affiche un descriptif du film + le trailer-->
+                    <button class="btn btn-info" data-toggle="modal" data-target="#ensavoirPlusModal" type="button"><i class="fa fa-info" aria-hidden="true"></i> En savoir plus</button>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Participants <br> <b>{nb.votes}</b>
+                        </div>
+                        <div class="col-sm-6">
+                            Jours avant deadline <br><b>{nb.votes}</b>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--fin de l'encart-->
+        </div>
+<!--        Fenêtre qui s'affiche en cliquant sur En savoir plus-->
+        <div class="modal fade" id="ensavoirPlusModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fa fa-info" aria-hidden="true"></i> En savoir plus</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="modal-title">
+                            <i class="fa fa-video-camera" aria-hidden="true"></i> Trailer </h4>
+                        <!--remplacer src par l'url de la video movie.url-->
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/bD7bpG-zDJQ?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+                    </div>
+                    <p> {movie.descriptif}</p>
+                    <div class="modal-footer">...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2018 <b>Go-cine.com</b>, tous droits réservés</p>
+
+    </footer>
+
+</body>
+
+</html>  

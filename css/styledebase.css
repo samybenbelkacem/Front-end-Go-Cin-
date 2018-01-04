@@ -1,0 +1,83 @@
+    header{
+        position:relative;
+    }
+    .logo{
+        height:auto;
+        width : 280px;
+    }
+    #signin{
+        position:absolute;
+        right:0;
+        margin:30px;
+        color : #fff;
+        background-color : #2bcfb4;
+        border: 1px solid transparent;
+        border-bottom:3px solid #30aea2;
+        padding : 9px 18px;
+        transition : all 0.5s linear;
+        font-weight:600;
+        border-radius:4px;
+        cursor:pointer;
+    }
+    #signin:hover{
+        background-color: #30aea2;
+        
+    }
+        footer{
+            background-color: #414042;
+            padding: 35px 0;
+            color : white;
+            text-align: center;
+        }
+    .links{
+        padding:25px;
+        color:white;
+        background-color: #414042;
+        border : 1px solid #FFF;
+        text-align:center;
+        font-weight:600;
+    }
+    .links>a{
+        color:white;
+ 
+    }
+    .links{
+      transition: all 0.5s linear  
+    }
+    .links:hover{
+        background-color : lightskyblue;
+    }
+    
+    
+    .carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+ 
+    .transparent{
+        background-color:rgba(0,0,0,0.6);
+        border-radius : 15px;
+        padding: 10px;}
+        
+        .projectioncontainer{
+            padding-top:30px;
+            padding-bottom:30px;
+        }
+    
+    .video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
